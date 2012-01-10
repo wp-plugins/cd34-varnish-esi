@@ -49,8 +49,8 @@ function widget_esi_init() {
 function esi_purge($post_id) {
   $url = parse_url(get_permalink($post_id));
   _esi_purge($url['host'], $url['path']);
-  _esi_purge($url['host'], '/wp-content/plugins/varnish-esi/esihandler.php');
-  _esi_purge($url['host'], '/');
+  _esi_purge(site_url(), '/wp-content/plugins/varnish-esi/esihandler.php');
+  _esi_purge(site_url(), '/');
 }
 
 function _esi_purge($hostname, $uri) {
