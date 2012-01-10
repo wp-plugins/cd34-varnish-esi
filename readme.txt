@@ -18,10 +18,18 @@ without worrying about comments and post edits not showing up immediately.
 == Installation ==
 
 1. Activate the plugin through the 'Plugins' menu in WordPress
+2. Appearance, Widgets, drag the ESI Widget to Sidebar 1
+3. Drag the Widgets that you want to display on your sidebar to the
+newly created ESI Widget Sidebar.
+4. Settings, Varnish ESI Widget, Set the Server IP(s) that the plugin
+needs to communicate with to purge.
+5. Make sure you have configured Varnish with the included default.vcl
+or with one that you have created that allows the plugin to issue BANs.
+Verify your ACL is set to allow purging.
 
 == Frequently Asked Questions ==
 
-= Why is this aproach better than other caching systems? =
+= Why is this approach better than other caching systems? =
 
 The worst queries in Wordpress are usually contained within the sidebar. If
 your content is engaging and someone browses from one page to the next, 
