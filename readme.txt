@@ -1,5 +1,6 @@
 === Plugin Name ===
 Plugin Name: Wordpress + Varnish ESI caching
+Donate: http://cd34.com/
 Contributors: cd34
 Tags: cache, caching, varnish, esi
 Requires at least: 2.6
@@ -80,3 +81,7 @@ to purge.
 
 = 0.1 =
 * Initial release
+
+== Upgrade Notice ==
+
+No Pending Update
