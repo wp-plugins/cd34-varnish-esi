@@ -6,14 +6,32 @@ Requires at least: 2.6
 Tested up to: 3.3
 Stable tag: 0.1
 
-A plugin to allow you to use Wordpress + Varnish and cache the sidebar
-using ESI.
+This plugin uses Wordpress + Varnish and caches the sidebar with ESI.
 
 == Description ==
 
-A plugin that uses Varnish and ESI to cache the sidebar separately from
+This plugin uses Varnish and ESI to cache the sidebar separately from
 the page and aggressively uses Purges so that you can set long expire times
 without worrying about comments and post edits not showing up immediately.
+
+I did a presentation on the methodology behind this which explains how
+the plugin works. [Blog Post](http://cd34.com/blog/scalability/wordpress-varnish-and-esi-plugin/)
+
+Should you use this?
+
+Probably not.
+
+If you're on a Virtual server, it is likely that you won't be able to install
+Varnish or run your site behind it. If you are able to run Varnish, the use
+case for this plugin is a little different than [Wordpress-Varnish](http://wordpress.org/extend/plugins/wordpress-varnish/).
+
+If you are trying to cache your site where your visitors are hitting one
+or two pages and you don't get many comments, [Wordpress-Varnish](http://wordpress.org/extend/plugins/wordpress-varnish/) will result in faster pageloads.
+
+If your site is dynamic and you receive a lot of comments, or, your visitors
+are likely to surf multiple pages rather than a single landing page, using
+ESI will probably provide enough benefit to make the plugin worthwhile for 
+you.
 
 == Installation ==
 
