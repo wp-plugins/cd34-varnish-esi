@@ -10,9 +10,7 @@ This plugin uses Wordpress + Varnish and caches the sidebar with ESI.
 
 == Description ==
 
-This plugin uses Varnish and ESI to cache the sidebar separately from
-the page and aggressively uses Purges so that you can set long expire times
-without worrying about comments and post edits not showing up immediately.
+This plugin uses [Varnish](https://www.varnish-cache.org/) and [ESI](https://www.varnish-cache.org/docs/3.0/tutorial/esi.html) to cache the sidebar separately from the page and aggressively uses Purges so that you can set long expire times without worrying about comments and post edits not showing up immediately.
 
 I did a presentation on the methodology behind this which explains how
 the plugin works. [Blog Post](http://cd34.com/blog/scalability/wordpress-varnish-and-esi-plugin/)
@@ -32,6 +30,8 @@ If your site is dynamic and you receive a lot of comments, or, your visitors
 are likely to surf multiple pages rather than a single landing page, using
 ESI will probably provide enough benefit to make the plugin worthwhile for 
 you.
+
+Image used under Creative Commons License from [Varnish Software](https://www.varnish-software.com/blog/superbunny-under-cc-license).
 
 == Installation ==
 
