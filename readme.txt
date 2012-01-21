@@ -81,10 +81,12 @@ to purge.
 
 = 0.2 =
 * updated VCL to actually parse for ESI
+* fixed ESI handler path
 
 = 0.1 =
 * Initial release
 
 == Upgrade Notice ==
 
-Updated VCL to actually use ESI
+* Updated VCL to actually use ESI
+* fixed ESI handler path

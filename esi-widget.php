@@ -21,7 +21,7 @@ Place the Widgets in 'ESI Widget Sidebar' and configure as needed.
 function widget_esi($args) {
   echo $before_widget;
 ?>
-<esi:include src="<?php echo plugins_url();?>/varnish-esi/esihandler.php"/>
+<esi:include src="<?php echo plugin_dir_url(__FILE__);?>esihandler.php"/>
 <?php
   echo $after_widget;
 }
@@ -49,7 +49,7 @@ function widget_esi_init() {
 function esi_purge($post_id) {
   $url = parse_url(get_permalink($post_id));
   _esi_purge($url['host'], $url['path']);
-  _esi_purge(site_url(), '/wp-content/plugins/varnish-esi/esihandler.php');
+  _esi_purge(site_url(), plugin_dir_url(__FILE__) + "esihandler.php");
   _esi_purge(site_url(), '/');
 }
 
