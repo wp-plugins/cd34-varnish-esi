@@ -4,7 +4,7 @@ Plugin Name: Wordpress Varnish ESI Widget
 Plugin URI: http://code.google.com/p/wordpress-varnish-esi/
 Description: Utilize Varnish and cache the sidebar using ESI
 Author: Chris Davies
-Version: 0.1
+Version: 0.2
 Author URI: http://cd34.com/
 
 * selective purge based on site - comment posted, do we need to purge sidebar or frontpage? (only frontpage if # of comments is displayed)

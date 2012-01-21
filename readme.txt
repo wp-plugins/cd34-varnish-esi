@@ -5,7 +5,7 @@ Contributors: cd34
 Tags: cache, caching, varnish, esi
 Requires at least: 2.6
 Tested up to: 3.3
-Stable tag: 0.1
+Stable tag: 0.2
 
 This plugin uses Wordpress + Varnish and caches the sidebar with ESI.
 
@@ -79,9 +79,12 @@ to purge.
 
 == Changelog ==
 
+= 0.2 =
+* updated VCL to actually parse for ESI
+
 = 0.1 =
 * Initial release
 
 == Upgrade Notice ==
 
-No Pending Update
+Updated VCL to actually use ESI

@@ -31,6 +31,9 @@ sub vcl_recv {
     unset req.http.cookie;
     set req.url = regsub(req.url, "\?.*$", "");
   }
+  if (req.url ~ “\?(utm_(campaign|medium|source|term)|adParams|client|cx|eid|fbid|feed|ref(id|src)?|v(er|iew))=”) {
+    set req.url = regsub(req.url, “\?.*$”, “”);
+  }
   if (req.http.cookie) {
     if (req.http.cookie ~ "(wordpress_|wp-settings-)") {
       return(pass);
@@ -41,18 +44,23 @@ sub vcl_recv {
 }
 
 sub vcl_fetch {
+  if (req.url ~ "wp-(login|admin)" || req.url ~ "preview=true" || req.url ~ "xmlrpc.php") {
+    return (hit_for_pass);
+  }
 # this conditional can probably be left out for most installations
 # as it can negatively impact sites without purge support. High
 # traffic sites might leave it, but, it will remove the WordPress
 # 'bar' at the top and you won't have the post 'edit' functions onscreen.
-  if ( (!(req.url ~ "(wp-(login|admin)|login)")) || (req.request == "GET") ) {
+  if (req.request == "GET") {
     unset beresp.http.set-cookie;
 # If you're not running purge support with a plugin, remove
 # this line.
-    set beresp.ttl = 5m;
+    set beresp.ttl = 1h;
   }
   if (req.url ~ "\.(gif|jpg|jpeg|swf|css|js|flv|mp3|mp4|pdf|ico|png)(\?.*|)$") {
     set beresp.ttl = 365d;
+  } else {
+    set beresp.do_esi = true;
   }
 }
 
