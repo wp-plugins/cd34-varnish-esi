@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Wordpress Varnish ESI Widget
-Plugin URI: http://code.google.com/p/wordpress-varnish-esi/
+Plugin URI: http://code.google.com/p/cd34-wordpress/wiki/WordpressVarnishESI
 Description: Utilize Varnish and cache the sidebar using ESI
 Author: Chris Davies
 Version: 0.2
